@@ -1,6 +1,7 @@
 // ==================== CONFIG =====================
 const YOUR_API_KEYS = ["SPLEXXO"]; // tumhara private key
-const TARGET_API = "http://king.thesmmpanel.shop/number-info"; // NEW API
+const TARGET_API = "https://flipcartstore.serv00.net/PHONE/1.php"; // NEW API
+const TARGET_API_KEY = "cyberGen123"; // upstream API key
 const CACHE_TIME = 3600 * 1000; // 1 hour (ms)
 // =================================================
 
@@ -63,7 +64,7 @@ module.exports = async (req, res) => {
   }
 
   // Upstream URL build - NEW API FORMAT
-  const url = `${TARGET_API}?mobile=${encodeURIComponent(mobile)}`;
+  const url = `${TARGET_API}?api_key=${TARGET_API_KEY}&mobile=${encodeURIComponent(mobile)}`;
 
   try {
     const upstream = await fetch(url);
